@@ -1,0 +1,45 @@
+---
+import { cvData } from '../data/cvData';
+---
+
+<footer class="border-t border-slate-800/80 bg-[#090d16]/90 backdrop-blur-xl py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+    <!-- Left Info -->
+    <div>
+      <div class="flex items-center justify-center md:justify-start gap-2">
+        <span class="font-bold text-slate-100 font-mono tracking-tight">{cvData.name}</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+          CSE @ UIU
+        </span>
+      </div>
+      <p class="text-xs text-slate-400 mt-2 font-mono">
+        Architected for 100/100 Lighthouse Performance & Zero Vendor Lock-in.
+      </p>
+    </div>
+
+    <!-- Tech Stack Pill & Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-slate-400">
+      <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">Astro SSG</span>
+      <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">Tailwind CSS v4</span>
+      <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">TypeScript</span>
+      <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800">Universal Deploy</span>
+    </div>
+
+    <!-- Right: Back to Top -->
+    <div>
+      <a
+        href="#"
+        class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors p-2 rounded-lg hover:bg-slate-800/60"
+      >
+        <span>Back to top</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-800/60 text-center text-xs font-mono text-slate-500">
+    © {new Date().getFullYear()} {cvData.name}. All research, codebases, and intellectual property protected.
+  </div>
+</footer>

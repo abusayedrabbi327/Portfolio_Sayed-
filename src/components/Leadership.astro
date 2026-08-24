@@ -1,0 +1,105 @@
+---
+import { cvData } from '../data/cvData';
+---
+
+<section id="leadership" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- Section Header -->
+  <div class="flex flex-col items-center text-center mb-16">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+      LEADERSHIP & MENTORSHIP
+    </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-tight">
+      Community Impact & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Executive Leadership</span>
+    </h2>
+    <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
+      Guiding student organizations, budgeting high-impact academic festivals, managing production IT, and mentoring junior engineers.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Education Column (1/3) -->
+    <div class="lg:col-span-1 space-y-6">
+      <div class="glass-panel rounded-3xl p-6 sm:p-7 border border-slate-800 relative overflow-hidden">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-slate-100">Academic Background</h3>
+            <span class="text-xs font-mono text-cyan-400">Formal Engineering Education</span>
+          </div>
+        </div>
+
+        {cvData.education.map((edu) => (
+          <div class="space-y-4">
+            <div>
+              <div class="text-base font-bold text-slate-200">{edu.degree}</div>
+              <div class="text-sm text-cyan-300/90 font-medium">{edu.institution}</div>
+              <div class="text-xs font-mono text-slate-400 mt-0.5">{edu.period} • {edu.location}</div>
+            </div>
+
+            {edu.gpaBadge && (
+              <div class="inline-block px-3 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold">
+                {edu.gpaBadge}
+              </div>
+            )}
+
+            <div>
+              <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Key Coursework</h4>
+              <div class="flex flex-wrap gap-1.5">
+                {edu.relevantCoursework.map((course) => (
+                  <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-slate-900 text-slate-300 border border-slate-800">
+                    {course}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Leadership & Mentorship Cards (2/3) -->
+    <div class="lg:col-span-2 space-y-6">
+      {cvData.leadership.map((item) => (
+        <div class="glass-panel rounded-3xl p-6 sm:p-7 border border-slate-800/90 hover:border-cyan-500/30 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                {item.type}
+              </span>
+              <h3 class="text-lg sm:text-xl font-bold text-slate-100 mt-2">
+                {item.role}
+              </h3>
+              <div class="text-sm font-medium text-cyan-400">
+                {item.organization}
+              </div>
+            </div>
+
+            <div class="text-right">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 font-mono text-xs border border-slate-800">
+                {item.period}
+              </span>
+              <div class="text-xs text-slate-400 mt-1">{item.location}</div>
+            </div>
+          </div>
+
+          <!-- Achievements List -->
+          <ul class="space-y-2 mt-4 pt-3 border-t border-slate-800">
+            {item.achievements.map((ach) => (
+              <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <span class="text-cyan-400 mt-0.5 flex-shrink-0">▹</span>
+                <span>{ach}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

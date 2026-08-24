@@ -1,0 +1,149 @@
+---
+import { cvData } from '../data/cvData';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="group flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 p-[2px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all">
+        <div class="w-full h-full bg-[#090d16] rounded-[10px] flex items-center justify-center font-mono font-bold text-cyan-400 text-lg group-hover:scale-105 transition-transform">
+          AR
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold text-base tracking-tight text-slate-100 group-hover:text-cyan-400 transition-colors">
+          {cvData.name}
+        </span>
+        <span class="text-xs font-mono text-cyan-400/80">
+          UIU CSE • Researcher
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
+      <a href="#about" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        About
+      </a>
+      <a href="#research" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        Research
+      </a>
+      <a href="#projects" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        Projects
+      </a>
+      <a href="#skills" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        Tech Matrix
+      </a>
+      <a href="#leadership" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        Leadership
+      </a>
+      <a href="#contact" class="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all">
+        Contact
+      </a>
+    </nav>
+
+    <!-- Right Side Actions: Theme Switcher & CV Button -->
+    <div class="flex items-center gap-3">
+      <!-- Theme Toggle Button -->
+      <button
+        id="theme-toggle"
+        aria-label="Toggle dark/light theme"
+        class="p-2 rounded-xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-cyan-400 transition-all cursor-pointer"
+      >
+        <!-- Sun Icon -->
+        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon Icon -->
+        <svg id="moon-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <!-- CV Download Button -->
+      <a
+        href="#cv-section"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        <span>Master CV</span>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        id="mobile-menu-button"
+        aria-label="Toggle navigation menu"
+        class="md:hidden p-2 rounded-xl bg-slate-800/60 border border-slate-700 text-slate-300 hover:text-white focus:outline-none"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#090d16]/95 backdrop-blur-xl border-b border-slate-800">
+    <div class="flex flex-col gap-2 pt-2">
+      <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">About</a>
+      <a href="#research" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">Research Hub</a>
+      <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">Flagship Projects</a>
+      <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">Tech Matrix</a>
+      <a href="#leadership" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">Leadership</a>
+      <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 font-medium">Contact</a>
+      <a href="#cv-section" class="mt-2 text-center py-2.5 rounded-lg font-semibold bg-cyan-500 text-slate-950">Download CV</a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  // Dark / Light Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  function syncThemeIcons() {
+    const isLight = document.documentElement.classList.contains('light');
+    if (isLight) {
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    } else {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    }
+  }
+
+  syncThemeIcons();
+
+  themeToggleBtn?.addEventListener('click', () => {
+    const isLight = document.documentElement.classList.contains('light');
+    if (isLight) {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    }
+    syncThemeIcons();
+  });
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

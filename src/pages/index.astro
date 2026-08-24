@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ResearchShowcase from '../components/ResearchShowcase.astro';
+import { ProjectGrid } from '../components/ProjectGrid';
+import TechMatrix from '../components/TechMatrix.astro';
+import Leadership from '../components/Leadership.astro';
+import CvSection from '../components/CvSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import { cvData } from '../data/cvData';
+---
+
+<Layout
+  title="Abu Sayed Rabbi | AI, Cybersecurity & Intelligent Systems Engineer"
+  description="Official Portfolio & Research Showcase of Abu Sayed Rabbi. Computer Science & Engineering Undergraduate @ UIU building Intelligent Systems, Explainable AI, Network Intrusion Detection (AEGIS), and High-Performance Software."
+>
+  <Navbar />
+  
+  <main class="relative z-10 flex flex-col">
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- Research & Publications Hub -->
+    <ResearchShowcase />
+
+    <!-- Flagship Software Projects (Interactive React Island) -->
+    <section id="projects" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <div class="flex flex-col items-center text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          ENGINEERING SHOWCASE
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-tight">
+          Flagship <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Software Projects</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
+          From high-throughput multi-threaded desktop utilities (Fender) to modern AI companions and real-time marketplaces.
+        </p>
+      </div>
+
+      <!-- React Island for interactive category filtering and modals -->
+      <ProjectGrid client:load projects={cvData.projects} />
+    </section>
+
+    <!-- Tech Stack Capabilities Matrix -->
+    <TechMatrix />
+
+    <!-- Leadership, Community & Mentorship -->
+    <Leadership />
+
+    <!-- Master CV Download Section -->
+    <CvSection />
+
+    <!-- Contact & Communications Hub -->
+    <ContactSection />
+  </main>
+
+  <Footer />
+</Layout>

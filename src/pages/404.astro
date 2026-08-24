@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="404: Page Not Found | Abu Sayed Rabbi">
+  <Navbar />
+  <main class="min-h-[75vh] flex flex-col items-center justify-center text-center px-4 pt-32 pb-20">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-6">
+      ERROR 404
+    </div>
+    <h1 class="text-6xl sm:text-8xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+      404
+    </h1>
+    <h2 class="text-2xl font-bold text-slate-100 mt-4">Telemetry Lost / Page Not Found</h2>
+    <p class="text-slate-400 max-w-md mt-2 text-sm">
+      The requested route does not exist in the routing table. Return to the home terminal to explore research and projects.
+    </p>
+    <a
+      href="/"
+      class="mt-8 px-6 py-3 rounded-xl text-sm font-bold bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-all font-mono"
+    >
+      Return to Home Terminal ➔
+    </a>
+  </main>
+  <Footer />
+</Layout>
