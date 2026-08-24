@@ -1,5 +1,6 @@
 ---
 import { cvData } from '../data/cvData';
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="cv-section" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -45,7 +46,7 @@ import { cvData } from '../data/cvData';
     <!-- Download & Action Buttons -->
     <div class="flex flex-wrap items-center justify-center gap-4">
       <a
-        href="/Abu_Sayed_Rabbi_CV.pdf"
+        href={`${baseUrl}/Abu_Sayed_Rabbi_CV.pdf`}
         download="Abu_Sayed_Rabbi_CV.pdf"
         id="cv-download-btn"
         class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-base font-bold bg-gradient-to-r from-cyan-500 via-sky-400 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-950 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all cursor-pointer"
