@@ -7,7 +7,7 @@ interface ProjectGridProps {
   projects: ProjectItem[];
 }
 
-const CATEGORIES = ['All', 'AI/ML', 'Cybersecurity', 'Full-Stack', 'Desktop'] as const;
+const CATEGORIES = ['All', 'Enterprise', 'AI/ML', 'Cybersecurity', 'Full-Stack', 'Educational'] as const;
 
 export const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');

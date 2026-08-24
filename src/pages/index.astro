@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import ResearchShowcase from '../components/ResearchShowcase.astro';
+import CurrentFocus from '../components/CurrentFocus.astro';
 import { ProjectGrid } from '../components/ProjectGrid';
 import TechMatrix from '../components/TechMatrix.astro';
 import Leadership from '../components/Leadership.astro';
@@ -13,14 +14,17 @@ import { cvData } from '../data/cvData';
 ---
 
 <Layout
-  title="Abu Sayed Rabbi | AI, Cybersecurity & Intelligent Systems Engineer"
-  description="Official Portfolio & Research Showcase of Abu Sayed Rabbi. Computer Science & Engineering Undergraduate @ UIU building Intelligent Systems, Explainable AI, Network Intrusion Detection (AEGIS), and High-Performance Software."
+  title="Abu Sayed Rabbi | AI, Cybersecurity & Full-Stack Systems Engineer"
+  description="Official Portfolio & Research Showcase of Abu Sayed Rabbi. Computer Science & Engineering Undergraduate @ UIU building Intelligent Systems, Explainable AI, Network Intrusion Detection (AEGIS, RT-XNIDS), and High-Performance Enterprise Software."
 >
   <Navbar />
   
   <main class="relative z-10 flex flex-col">
     <!-- Hero Section -->
     <Hero />
+
+    <!-- Active Research & Innovation Frontiers -->
+    <CurrentFocus />
 
     <!-- Research & Publications Hub -->
     <ResearchShowcase />

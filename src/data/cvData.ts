@@ -3,8 +3,8 @@ export interface ResearchItem {
   title: string;
   shortTitle: string;
   tagline: string;
-  category: 'Cybersecurity' | 'Explainable AI' | 'LLM Optimization' | 'Network Defense';
-  status: 'Published' | 'In Preparation' | 'Under Review' | 'Preprint';
+  category: 'Cybersecurity' | 'Explainable AI' | 'LLM Optimization' | 'Network Defense' | 'Applied AI';
+  status: 'Active Focus' | 'Published' | 'In Preparation' | 'Preprint';
   authors: string[];
   venue?: string;
   year: string;
@@ -25,7 +25,7 @@ export interface ProjectItem {
   id: string;
   title: string;
   subtitle: string;
-  category: 'AI/ML' | 'Cybersecurity' | 'Full-Stack' | 'Desktop';
+  category: 'Enterprise' | 'AI/ML' | 'Cybersecurity' | 'Full-Stack' | 'Educational' | 'Desktop';
   description: string;
   highlights: string[];
   architectureDetails: string;
@@ -35,9 +35,8 @@ export interface ProjectItem {
   metrics?: { label: string; value: string }[];
   githubUrl?: string;
   liveUrl?: string;
-  demoUrl?: string;
   isFeatured: boolean;
-  colorTheme: string;
+  colorTheme?: string;
 }
 
 export interface SkillCategory {
@@ -46,7 +45,6 @@ export interface SkillCategory {
   skills: {
     name: string;
     level: 'Expert' | 'Advanced' | 'Proficient' | 'Familiar';
-    categoryTag?: string;
     isPrimary?: boolean;
   }[];
 }
@@ -59,6 +57,7 @@ export interface LeadershipItem {
   location: string;
   achievements: string[];
   badge: string;
+  repoUrl?: string;
 }
 
 export interface EducationItem {
@@ -81,12 +80,14 @@ export interface ProfileData {
   github: string;
   linkedin: string;
   bioSummary: string;
+  quote: string;
   badges: string[];
   availability: {
     status: 'available' | 'busy';
     text: string;
   };
   stats: { label: string; value: string; suffix?: string }[];
+  currentFocus: { title: string; desc: string; tag: string }[];
   education: EducationItem[];
   research: ResearchItem[];
   projects: ProjectItem[];
@@ -96,33 +97,66 @@ export interface ProfileData {
 
 export const cvData: ProfileData = {
   name: "Abu Sayed Rabbi",
-  title: "Undergraduate Computer Science & Engineering Researcher & Software Engineer",
-  roleSubtitle: "Building Intelligent Systems at the Intersection of AI, Cybersecurity & Software Engineering",
+  title: "Full-Stack Developer, AI Engineer & Cybersecurity Researcher",
+  roleSubtitle: "Building Scalable Intelligent Systems Across AI, Cybersecurity, Enterprise Systems & Web",
   location: "Dhaka, Bangladesh",
-  email: "abusayedrabbi327@gmail.com",
+  email: "abusayed102188@gmail.com",
   github: "https://github.com/abusayedrabbi327",
-  linkedin: "https://linkedin.com/in/abusayedrabbi",
-  bioSummary: "Final-year Computer Science and Engineering undergraduate at United International University (UIU). Specializing in AI-driven cybersecurity, Explainable AI (XAI) for real-time intrusion detection, high-performance desktop systems, and modern scalable full-stack web applications. Passionate about turning complex academic research into deployable, human-interpretable engineering solutions.",
+  linkedin: "https://www.linkedin.com/in/abu-sayed-rabbi-915541226/",
+  quote: "Coding is easy. Changing the world is hard — I'm here for both. Dreaming beyond code: building trillion-dollar solutions that fix real problems.",
+  bioSummary: "Computer Science and Engineering undergraduate at United International University (UIU). Specializing in AI-driven cybersecurity, Explainable AI (XAI) for real-time intrusion detection, full-stack systems, database management, and enterprise software solutions. Passionate about architecting mission-critical applications that bridge complex AI research with rock-solid production code.",
   badges: [
     "🎓 UIU CSE Senior",
     "🔒 Cyber Defense & IDS",
-    "🤖 Explainable AI (XAI)",
-    "⚡ Full-Stack & Systems"
+    "🤖 AI/ML & LLM Systems",
+    "⚡ Full-Stack & Enterprise"
   ],
   availability: {
     status: "available",
-    text: "Open for Research Collaborations & Software Engineering Roles"
+    text: "Open for AI / Full-Stack Roles & Research Collaborations"
   },
   stats: [
-    { label: "Research Innovations", value: "4", suffix: "+" },
-    { label: "Production Projects", value: "10", suffix: "+" },
+    { label: "Public Repositories", value: "20", suffix: "+" },
     { label: "Intrusion Detection Acc.", value: "99.4", suffix: "%" },
+    { label: "Core Tech Stacks", value: "8", suffix: "+" },
     { label: "Leadership Tenures", value: "4", suffix: " Orgs" }
+  ],
+  currentFocus: [
+    {
+      title: "Global Mirror AI",
+      desc: "An AI-driven truth detection and geopolitical discourse analysis system for international politics and narrative tracking.",
+      tag: "AI / Geopolitics"
+    },
+    {
+      title: "RT-XNIDS & AEGIS",
+      desc: "Multi-layer real-time network intrusion detection and explainable host defense monitoring with sub-millisecond local attribution.",
+      tag: "Cybersecurity"
+    },
+    {
+      title: "E-CMH Platform",
+      desc: "Multi-role enterprise hospital management system with advanced patient triage, medical records encryption, and billing workflows.",
+      tag: "Enterprise Healthcare"
+    },
+    {
+      title: "AI-Powered PDF Reader",
+      desc: "Smart reading companion with real-time semantic retrieval, contextual learning synthesis, and interactive document Q&A.",
+      tag: "LLMs / RAG"
+    },
+    {
+      title: "Water Quality Detection AI",
+      desc: "Personalized environmental care tech and water safety inference system based on hyper-local parameter telemetry.",
+      tag: "Green AI / IoT"
+    },
+    {
+      title: "Cybersecurity Sandbox Toolkit",
+      desc: "Multi-layer automated URL analysis, phishing detection, and isolated telemetry sandboxing.",
+      tag: "SecOps"
+    }
   ],
   education: [
     {
       degree: "Bachelor of Science in Computer Science & Engineering",
-      field: "Intelligent Systems, Cybersecurity & Software Engineering",
+      field: "Intelligent Systems, Cybersecurity & Enterprise Software Engineering",
       institution: "United International University (UIU)",
       location: "Dhaka, Bangladesh",
       period: "2021 — 2025 (Expected)",
@@ -150,9 +184,9 @@ export const cvData: ProfileData = {
       shortTitle: "AEGIS (Capstone Research)",
       tagline: "Multi-layered autonomous cyber defense architecture with real-time SHAP/LIME explainability",
       category: "Cybersecurity",
-      status: "In Preparation",
-      authors: ["Abu Sayed Rabbi", "Research Team", "Faculty Advisors @ UIU"],
-      venue: "IEEE / Springer Cyber Defense Track (Targeted)",
+      status: "Active Focus",
+      authors: ["Abu Sayed Rabbi", "Collaborators", "Faculty Advisors @ UIU"],
+      venue: "Targeting Top-tier IEEE / Springer Security Tracks",
       year: "2025",
       abstract: "Modern cyber defense systems generate millions of high-dimensional telemetry events but suffer from black-box decision making and prohibitive false alarm rates. AEGIS integrates network-level packet telemetry (XNIDS) and host-level system call sequences (HIDS) into a unified neural-symbolic detection pipeline. Through an interpretable feature transformation (SIFT) layer and sub-millisecond local explainability kernels, AEGIS delivers actionable, transparent threat attribution to security operations centers (SOCs).",
       contributions: [
@@ -177,17 +211,17 @@ export const cvData: ProfileData = {
         { label: "False Positive Reduction", value: "37.8%", detail: "Compared to vanilla Random Forest baseline" }
       ],
       tags: ["Explainable AI", "Network Security", "Host Intrusion Detection", "eBPF", "SHAP", "PyTorch", "Real-Time Telemetry"],
-      codeUrl: "https://github.com/abusayedrabbi327",
+      codeUrl: "https://github.com/abusayedrabbi327/AEGIS",
       isFeatured: true
     },
     {
       id: "rt-xnids",
-      title: "RT-XNIDS: Real-Time Explainable Network Intrusion Detection with High-Throughput Flows",
+      title: "RT-XNIDS: Real-Time Explainable Network Intrusion Detection System",
       shortTitle: "RT-XNIDS",
       tagline: "Explainable deep learning framework for zero-day network anomaly detection and flow classification",
       category: "Network Defense",
-      status: "In Preparation",
-      authors: ["Abu Sayed Rabbi", "Collaborators"],
+      status: "Active Focus",
+      authors: ["Abu Sayed Rabbi"],
       year: "2024 — 2025",
       abstract: "Network intrusion detection requires both microsecond classification throughput and transparent decision boundaries for auditability. RT-XNIDS benchmarks high-throughput deep neural ensembles against tree-based architectures with post-hoc surrogate explainers, optimizing gradient attribution trees for line-rate network monitoring.",
       contributions: [
@@ -199,145 +233,251 @@ export const cvData: ProfileData = {
         { label: "Throughput", value: "120k flows/s", detail: "Single-core CPU benchmark" },
         { label: "F1-Score", value: "0.991", detail: "Macro average on benchmark attacks" }
       ],
-      tags: ["Cybersecurity", "Network IDS", "Machine Learning", "Scikit-Learn", "Snort/Suricata", "Wireshark"],
-      codeUrl: "https://github.com/abusayedrabbi327",
+      tags: ["Cybersecurity", "Network IDS", "Machine Learning", "Scikit-Learn", "Snort", "Wireshark", "Python"],
+      codeUrl: "https://github.com/abusayedrabbi327/RT-XNIDS",
       isFeatured: true
     },
     {
-      id: "sift-engine",
-      title: "SIFT: Scalable Interpretable Feature Transformation for High-Dimensional Telemetry",
-      shortTitle: "SIFT Pipeline",
-      tagline: "Dimensionality reduction preserving human-interpretable security semantic attributes",
-      category: "Explainable AI",
-      status: "Preprint",
-      authors: ["Abu Sayed Rabbi"],
-      year: "2024",
-      abstract: "Standard dimensionality reduction techniques like PCA and UMAP destroy the physical meaning of network features (such as packet size, TTL, and TCP flags). SIFT introduces structured semantic clustering that compresses 80+ network telemetry features into orthogonal, human-understandable meta-dimensions without losing predictive fidelity.",
-      contributions: [
-        "Preserved 98.7% variance while maintaining 100% human-interpretable semantic metadata tags",
-        "Reduced downstream SHAP computation overhead by 4.2x for real-time edge devices"
-      ],
-      metrics: [
-        { label: "SHAP Speedup", value: "4.2x", detail: "Compared to full feature space" },
-        { label: "Semantic Retention", value: "100%", detail: "Direct mapping to physical network properties" }
-      ],
-      tags: ["XAI", "Feature Engineering", "Interpretability", "Data Science", "Python"],
-      isFeatured: false
-    },
-    {
-      id: "ecocode-llm",
-      title: "EcoCode-LLM: Carbon-Aware Code Optimization and Efficient Inference",
-      shortTitle: "EcoCode-LLM",
-      tagline: "Exploring algorithmic efficiency and energy footprint minimization in automated code generation",
-      category: "LLM Optimization",
-      status: "In Preparation",
+      id: "global-mirror-ai",
+      title: "Global Mirror AI: Truth Detection & Geopolitical Narrative Analysis",
+      shortTitle: "Global Mirror AI",
+      tagline: "AI-driven discourse modeling and truth detection system for international politics",
+      category: "Applied AI",
+      status: "Active Focus",
       authors: ["Abu Sayed Rabbi"],
       year: "2025",
-      abstract: "Investigating the intersection between large language model code synthesis, computational runtime complexity, and carbon energy footprint. Developing heuristic evaluation benchmarks that guide LLMs toward generating energy-efficient, memory-optimized algorithms.",
+      abstract: "Developing automated narrative verification pipelines using LLMs and transformer architectures to cross-examine political press statements, news feeds, and statistical fact databases, highlighting bias vectors and verified truth claims.",
       contributions: [
-        "Constructed synthetic benchmark suites measuring CPU cycles and memory footprint of LLM-generated code",
-        "Evaluated prompt-engineering strategies enforcing algorithmic O(n) bounds in generated Python and C++ code"
+        "Built multi-source web ingestion pipeline for international news releases and policy documents",
+        "Engineered contextual fact-checking kernels comparing claims against historical reference databases"
       ],
-      metrics: [
-        { label: "Energy Optimization", value: "28%", detail: "Reduction in runtime CPU cycles on benchmark loops" }
-      ],
-      tags: ["LLMs", "Green Computing", "Algorithmic Efficiency", "PyTorch", "Python"],
+      tags: ["NLP", "Transformers", "LLMs", "Truth Detection", "Python", "FastAPI"],
       isFeatured: false
     }
   ],
   projects: [
     {
-      id: "pocketguru",
-      title: "PocketGuru",
-      subtitle: "AI-Powered Student Financial & Academic Companion",
-      category: "Full-Stack",
-      description: "A comprehensive, high-velocity web platform designed to streamline student academic planning, expense management, and AI-driven study schedules with interactive visual dashboards.",
+      id: "aegis-proj",
+      title: "AEGIS",
+      subtitle: "Enterprise Advanced Security & System Integration (Final Year Project)",
+      category: "Enterprise",
+      description: "Collaborative flagship cybersecurity framework uniting AI-driven threat classification, host event telemetry, and high-performance database management for mission-critical enterprise defense.",
       highlights: [
-        "Engineered responsive, accessible UI using React 18, TypeScript, Tailwind CSS, and Radix UI primitives",
-        "Designed end-to-end interactive mockups and design system in Figma before translating to production code",
-        "Integrated client-side state caching, optimistic UI updates, and dark/light theme switching with zero layout shift"
+        "Engineered multi-layer threat detection engine processing real-time network and system events",
+        "Integrated robust database backend with normalized security audit logging and automated alerts",
+        "Collaborated with cross-functional engineering peers to build end-to-end telemetry pipelines"
       ],
-      architectureDetails: "Modular React 18 component tree with custom hook state management, Radix headless accessible primitives, and fluid Tailwind CSS utility tokens.",
-      techStack: ["React 18", "TypeScript", "Tailwind CSS", "Radix UI", "Figma", "Vite"],
-      role: "Lead Frontend Architect & UI/UX Designer",
-      year: "2024",
-      metrics: [
-        { label: "Component Count", value: "35+" },
-        { label: "Lighthouse Performance", value: "98/100" }
-      ],
-      githubUrl: "https://github.com/abusayedrabbi327/pocketguru",
-      liveUrl: "https://pocketguru-preview.vercel.app",
-      isFeatured: true,
-      colorTheme: "from-blue-500/20 to-cyan-500/20 border-cyan-500/30"
-    },
-    {
-      id: "fender-v35",
-      title: "Fender v3.5 Professional",
-      subtitle: "High-Performance Multi-Threaded Duplicate File Hunter & Storage Organizer",
-      category: "Desktop",
-      description: "A production-grade, multi-threaded desktop utility engineered in Python and PyQt5. Utilizes xxhash (C-level hashing) and tiered size-hash verification to index and deduplicate terabytes of disk storage with real-time document previewing.",
-      highlights: [
-        "Implemented 3-stage deduplication pipeline: quick size triage -> chunked xxhash64 header -> full byte-level validation",
-        "Built rich multi-format preview engine supporting PDF (PyMuPDF), Word (.docx), PowerPoint (.pptx), and Images (Pillow)",
-        "Integrated asynchronous QThread worker pools for unfreezing UI during multi-gigabyte disk scans",
-        "Designed modern custom dark GUI with batch auto-selection heuristics and safe trash bin recovery (send2trash)"
-      ],
-      architectureDetails: "PyQt5 MVC architecture with decoupled scanning worker threads, xxhash fast-hashing native binding, and robust error-handling file locks.",
-      techStack: ["Python 3", "PyQt5", "xxhash (C-speed)", "PyMuPDF", "python-docx", "Pillow", "send2trash"],
-      role: "Sole Creator & Lead Systems Developer",
+      architectureDetails: "Distributed telemetry pipeline with neural-symbolic classifier, relational security event logging, and modern web interface.",
+      techStack: ["Python", "AI / Machine Learning", "Cybersecurity", "MySQL", "Flask / FastAPI"],
+      role: "Lead Security Researcher & Co-Developer",
       year: "2024 — 2025",
       metrics: [
-        { label: "Scanning Speed", value: "50,000+ files/min" },
-        { label: "Preview Formats", value: "PDF, DOCX, PPTX, Images" }
+        { label: "Accuracy", value: "99.4%" },
+        { label: "Audit Throughput", value: "Real-Time" }
       ],
-      githubUrl: "https://github.com/abusayedrabbi327/fender-file-manager",
-      isFeatured: true,
-      colorTheme: "from-amber-500/20 to-orange-500/20 border-amber-500/30"
+      githubUrl: "https://github.com/abusayedrabbi327/AEGIS",
+      isFeatured: true
     },
     {
-      id: "thikana",
-      title: "Thikana Marketplace",
-      subtitle: "Full-Stack Real-Time Housing & Student Marketplace",
-      category: "Full-Stack",
-      description: "A multi-vendor real-time student housing and marketplace ecosystem built with React 19, Node.js, Express, Socket.io, and relational MySQL database.",
+      id: "rt-xnids-proj",
+      title: "RT-XNIDS",
+      subtitle: "Real-Time Network Intrusion Detection System",
+      category: "Cybersecurity",
+      description: "A production-oriented network intrusion detection system capable of monitoring high-speed packet traffic, analyzing TCP/IP flow characteristics, and classifying cyber attacks with actionable explainability.",
       highlights: [
-        "Built bi-directional real-time chat and instantaneous bidding notifications using Socket.io WebSockets",
-        "Architected normalized relational database schema in MySQL for user auth, property listings, and escrow records",
-        "Implemented JWT-based secure role-based access control (RBAC) with sanitized SQL queries preventing injection"
+        "Engineered live packet capture and flow aggregation engine using Scapy and Socket streams",
+        "Trained high-accuracy machine learning classifiers for DDoS, infiltration, and port scanning",
+        "Built instant alert dispatch system with telemetry feature importance breakdown"
       ],
-      architectureDetails: "Client-server architecture with React 19 frontend communicating via RESTful API and WebSocket event channels to an Express.js backend cluster.",
-      techStack: ["React 19", "Node.js", "Express", "Socket.io", "MySQL", "JWT", "Tailwind CSS"],
-      role: "Full-Stack Engineer & Database Architect",
+      architectureDetails: "Low-latency packet ingestion buffer connected to feature engineering pipeline and ML inference engine.",
+      techStack: ["Python", "Scikit-learn", "Scapy", "Wireshark", "Network Security", "Pandas"],
+      role: "Sole Creator & Lead Security Developer",
+      year: "2024 — 2025",
+      metrics: [
+        { label: "Throughput", value: "120k flows/s" },
+        { label: "Detection Latency", value: "< 2ms" }
+      ],
+      githubUrl: "https://github.com/abusayedrabbi327/RT-XNIDS",
+      isFeatured: true
+    },
+    {
+      id: "bankms",
+      title: "BANKMS",
+      subtitle: "Core Enterprise Banking & Financial Transaction System",
+      category: "Enterprise",
+      description: "Robust core banking backend system engineered with ACID transaction guarantees, secure account balance ledgering, multi-factor customer authentication, and complete audit trail management.",
+      highlights: [
+        "Architected strict transactional ledger schema preventing race conditions and double-spending",
+        "Implemented customer account creation, fund transfers, loan schedules, and interest calculations",
+        "Enforced encrypted credentials and role-based permissions for teller and manager tiers"
+      ],
+      architectureDetails: "Three-tier enterprise backend architecture with parameterized database transaction layers.",
+      techStack: ["Java / Python", "MySQL", "RDBMS", "Security", "Backend System"],
+      role: "Backend & Database Architect",
       year: "2024",
-      metrics: [
-        { label: "Real-Time Latency", value: "< 45ms" },
-        { label: "Relational Tables", value: "14 Normalized" }
-      ],
-      githubUrl: "https://github.com/abusayedrabbi327/thikana",
-      isFeatured: true,
-      colorTheme: "from-emerald-500/20 to-teal-500/20 border-emerald-500/30"
+      githubUrl: "https://github.com/abusayedrabbi327/BANKMS",
+      isFeatured: true
     },
     {
-      id: "neighborhood-sustainability-network",
-      title: "Neighborhood Sustainability Network (NSN)",
-      subtitle: "Community Carbon-Footprint & Resource Sharing Web Portal",
-      category: "Full-Stack",
-      description: "A community-focused web platform empowering local neighborhoods to coordinate eco-friendly initiatives, tree planting drives, and localized carbon footprint reduction logs.",
+      id: "hrms",
+      title: "HRMS",
+      subtitle: "Human Resources & Payroll Management Enterprise System",
+      category: "Enterprise",
+      description: "Full-scale Java and MySQL Human Resources Management platform handling automated monthly payroll calculations, attendance tracking, employee lifecycle records, and department analytics.",
       highlights: [
-        "Engineered responsive server-rendered web application with PHP, MySQL, and modern CSS/JavaScript",
-        "Created dynamic impact analytics dashboard tracking saved kilograms of CO2 per neighborhood zone",
-        "Implemented automated monthly neighborhood leaderboard system with verified activity logs"
+        "Designed normalized MySQL database schema handling employee hierarchies and tax brackets",
+        "Automated salary generation, bonus allocations, deduction rules, and pay-slip exports",
+        "Built intuitive administrative dashboard for leave requests and employee appraisal logs"
       ],
-      architectureDetails: "LAMP stack application with structured MVC routing, relational database foreign key cascades, and AJAX live data polling.",
-      techStack: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Bootstrap/Tailwind"],
-      role: "Backend & Database Developer",
+      architectureDetails: "Java MVC enterprise desktop/server application connected via JDBC to a normalized MySQL cluster.",
+      techStack: ["Java", "MySQL", "JDBC", "Desktop UI / Swing", "Database Design"],
+      role: "Lead Software Developer",
       year: "2023 — 2024",
-      metrics: [
-        { label: "Community Actions", value: "1,200+ Logged" }
+      githubUrl: "https://github.com/abusayedrabbi327/HRMS",
+      isFeatured: true
+    },
+    {
+      id: "pocketguru",
+      title: "Pocket_Guru",
+      subtitle: "AI-Powered Educational & Personalized Learning Companion",
+      category: "Educational",
+      description: "Interactive educational web platform designed to provide students with personalized academic pathways, interactive study tools, and AI-driven guidance.",
+      highlights: [
+        "Engineered responsive, dynamic web interface with modern component-driven architecture",
+        "Integrated customized learning recommendations and student progress telemetry",
+        "Designed clean UX for interactive quiz modules and concept reinforcement"
       ],
-      githubUrl: "https://github.com/abusayedrabbi327/nsn-sustainability-portal",
-      isFeatured: false,
-      colorTheme: "from-green-500/20 to-emerald-500/20 border-green-500/30"
+      architectureDetails: "Modular frontend connected to intelligent recommendation APIs and persistent progress state.",
+      techStack: ["React", "TypeScript / JavaScript", "Tailwind CSS", "Node.js", "AI APIs"],
+      role: "Lead Frontend Architect & UI Designer",
+      year: "2024",
+      githubUrl: "https://github.com/abusayedrabbi327/Pocket_Guru",
+      isFeatured: true
+    },
+    {
+      id: "graph-math",
+      title: "Graph_Math",
+      subtitle: "Interactive Equation Explorer & 2D/3D Graph Visualizer",
+      category: "Educational",
+      description: "An educational web visualizer for students and educators to explore mathematical functions, graph transformations, calculus limits, and algebraic curves in real time.",
+      highlights: [
+        "Implemented real-time mathematical expression parser and coordinate plane canvas renderer",
+        "Built interactive sliders for parametric equations and dynamic trigonometric waves",
+        "Optimized 60 FPS rendering pipeline for smooth zooming and panning"
+      ],
+      architectureDetails: "Client-side React application leveraging HTML5 Canvas and math expression tree evaluation.",
+      techStack: ["React", "JavaScript", "HTML5 Canvas", "MathJS", "CSS3"],
+      role: "Creator & Algorithm Engineer",
+      year: "2024",
+      githubUrl: "https://github.com/abusayedrabbi327/Graph_Math",
+      isFeatured: true
+    },
+    {
+      id: "doforge",
+      title: "DoForge",
+      subtitle: "Dynamic Task Management & Agile Project Planning Platform",
+      category: "Full-Stack",
+      description: "A full-stack collaborative task management ecosystem featuring Kanban boards, sprint tracking, priority matrix scoring, and team assignment workflows.",
+      highlights: [
+        "Engineered RESTful backend with Express.js and MongoDB for high-velocity document storage",
+        "Built drag-and-drop Kanban interface with instant optimistic UI state updates",
+        "Implemented JWT authentication, team workspaces, and activity timeline audit trails"
+      ],
+      architectureDetails: "MERN stack architecture (MongoDB, Express, React, Node.js) with JWT authorization.",
+      techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "REST API"],
+      role: "Full-Stack Engineer",
+      year: "2024",
+      githubUrl: "https://github.com/abusayedrabbi327/DoForge",
+      isFeatured: true
+    },
+    {
+      id: "thikana3",
+      title: "Thikana3",
+      subtitle: "Full-Stack Location-Based Property & Address Management Portal",
+      category: "Full-Stack",
+      description: "Location-aware property listing and address registry platform facilitating student housing searches, verified property inquiries, and interactive mapping.",
+      highlights: [
+        "Built responsive location search engine with dynamic filtering by neighborhood and budget",
+        "Architected relational database backend handling listings, media assets, and verified landlord profiles",
+        "Integrated direct messaging and inquiry management system"
+      ],
+      architectureDetails: "Full-stack client-server architecture with REST endpoints and relational data layer.",
+      techStack: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS", "REST APIs"],
+      role: "Full-Stack Developer",
+      year: "2024",
+      githubUrl: "https://github.com/abusayedrabbi327/Thikana3",
+      isFeatured: true
+    },
+    {
+      id: "nsn-wellness",
+      title: "NSN_for_better_life",
+      subtitle: "Community Wellness, Health Tracking & Lifestyle Optimization",
+      category: "Full-Stack",
+      description: "A holistic community and lifestyle optimization web portal empowering users to log health metrics, track sustainable living habits, and access wellness resources.",
+      highlights: [
+        "Created daily habit tracking dashboard with interactive progress analytics",
+        "Implemented community eco-action challenges with verified activity logs",
+        "Engineered responsive UI accessible on mobile and desktop browsers"
+      ],
+      architectureDetails: "Full-stack application with normalized user habit logs and analytics aggregates.",
+      techStack: ["JavaScript", "PHP / Node.js", "MySQL", "HTML5", "CSS3 / Tailwind"],
+      role: "Lead Full-Stack Developer",
+      year: "2023 — 2024",
+      githubUrl: "https://github.com/abusayedrabbi327/NSN_for_better_life",
+      isFeatured: false
+    },
+    {
+      id: "library-ms",
+      title: "Library-MS",
+      subtitle: "Digital Library Management & Automated Cataloging System",
+      category: "Enterprise",
+      description: "Enterprise database system for institutional libraries managing digital book inventories, barcode cataloging, student loan privileges, and overdue fine calculations.",
+      highlights: [
+        "Designed comprehensive relational schema with foreign key cascades and book reservation queues",
+        "Implemented automated fine calculation heuristics and loan return tracking",
+        "Built searchable catalog index supporting ISBN, author, and genre queries"
+      ],
+      architectureDetails: "RDBMS architecture with ACID transactions and structured SQL stored procedures.",
+      techStack: ["MySQL", "SQL", "Database Design", "Java / Python", "Backend"],
+      role: "Database Architect & Developer",
+      year: "2023",
+      githubUrl: "https://github.com/abusayedrabbi327/Library-MS",
+      isFeatured: false
+    },
+    {
+      id: "spin-wheel",
+      title: "Spin_wheel_for_fun",
+      subtitle: "Interactive Physics-Based Wheel of Fortune & Decision Game",
+      category: "Full-Stack",
+      description: "Interactive HTML5 Canvas web application featuring smooth physics damping, customizable prize segments, sound effects, and randomized outcome verification.",
+      highlights: [
+        "Engineered custom angular acceleration and friction deceleration physics loop on HTML5 Canvas",
+        "Built dynamic modal for users to input custom item labels and weighted probabilities",
+        "Zero-dependency pure JavaScript implementation"
+      ],
+      architectureDetails: "Canvas 2D rendering loop with RAF (requestAnimationFrame) physics calculation.",
+      techStack: ["JavaScript (ES6+)", "HTML5 Canvas", "CSS3 Animations", "Web Audio API"],
+      role: "Creator & Frontend Developer",
+      year: "2023",
+      githubUrl: "https://github.com/abusayedrabbi327/Spin_wheel_for_fun",
+      isFeatured: false
+    },
+    {
+      id: "user-manager",
+      title: "User-Manager-",
+      subtitle: "Secure User Authentication & RBAC Management Microservice",
+      category: "Enterprise",
+      description: "Backend authentication and user lifecycle service featuring hashed credentials, JWT token lifecycle management, password resets, and role-based access control.",
+      highlights: [
+        "Implemented bcrypt password hashing and secure token refresh rotation",
+        "Built middleware for granular route protection across user, moderator, and admin roles"
+      ],
+      architectureDetails: "Express.js REST microservice with token authorization middleware.",
+      techStack: ["Node.js", "Express", "JWT", "Bcrypt", "MongoDB / MySQL"],
+      role: "Backend Developer",
+      year: "2023",
+      githubUrl: "https://github.com/abusayedrabbi327/User-Manager-",
+      isFeatured: false
     }
   ],
   skills: [
@@ -346,27 +486,41 @@ export const cvData: ProfileData = {
       iconName: "Code2",
       skills: [
         { name: "Python", level: "Expert", isPrimary: true },
-        { name: "TypeScript", level: "Advanced", isPrimary: true },
         { name: "JavaScript (ES6+)", level: "Expert", isPrimary: true },
+        { name: "TypeScript", level: "Advanced", isPrimary: true },
+        { name: "Java", level: "Advanced", isPrimary: true },
         { name: "C / C++", level: "Proficient", isPrimary: true },
-        { name: "Java", level: "Proficient" },
         { name: "PHP", level: "Proficient" },
-        { name: "SQL", level: "Advanced", isPrimary: true },
+        { name: "SQL", level: "Expert", isPrimary: true },
+        { name: "Bash / Shell", level: "Proficient" },
         { name: "HTML5 / CSS3", level: "Expert" }
       ]
     },
     {
-      category: "AI, ML & Explainability",
+      category: "AI, ML & NLP",
       iconName: "BrainCircuit",
       skills: [
         { name: "PyTorch", level: "Advanced", isPrimary: true },
+        { name: "TensorFlow", level: "Proficient", isPrimary: true },
         { name: "Scikit-Learn", level: "Expert", isPrimary: true },
-        { name: "SHAP (XAI)", level: "Advanced", isPrimary: true },
-        { name: "LIME (XAI)", level: "Advanced", isPrimary: true },
+        { name: "OpenAI API & LangChain", level: "Advanced", isPrimary: true },
+        { name: "Transformers / HuggingFace", level: "Advanced" },
+        { name: "SHAP & LIME (XAI)", level: "Advanced", isPrimary: true },
         { name: "Pandas & NumPy", level: "Expert", isPrimary: true },
-        { name: "OpenCV", level: "Proficient" },
-        { name: "Feature Engineering & SIFT", level: "Expert" },
-        { name: "Neural Networks & GBDT", level: "Advanced" }
+        { name: "Feature Engineering", level: "Expert" }
+      ]
+    },
+    {
+      category: "Web & Full-Stack Frameworks",
+      iconName: "Layers",
+      skills: [
+        { name: "React (18 / 19)", level: "Expert", isPrimary: true },
+        { name: "Next.js / Astro", level: "Advanced", isPrimary: true },
+        { name: "Node.js & Express", level: "Expert", isPrimary: true },
+        { name: "Flask & Django", level: "Proficient", isPrimary: true },
+        { name: "Tailwind CSS v4", level: "Expert", isPrimary: true },
+        { name: "Socket.io (WebSockets)", level: "Advanced" },
+        { name: "RESTful API Design", level: "Expert" }
       ]
     },
     {
@@ -374,50 +528,35 @@ export const cvData: ProfileData = {
       iconName: "ShieldAlert",
       skills: [
         { name: "Network Intrusion Detection (NIDS)", level: "Advanced", isPrimary: true },
-        { name: "Host Intrusion Detection (HIDS)", level: "Advanced", isPrimary: true },
-        { name: "Wireshark & PCAP Analysis", level: "Advanced", isPrimary: true },
-        { name: "Snort / Suricata", level: "Proficient" },
-        { name: "eBPF & Syscall Telemetry", level: "Proficient" },
-        { name: "Linux System Hardening", level: "Advanced" },
-        { name: "Reverse Engineering Basics", level: "Proficient" },
-        { name: "Multi-threaded Systems (xxhash)", level: "Expert" }
+        { name: "Real-Time Telemetry Analysis", level: "Advanced", isPrimary: true },
+        { name: "Wireshark & PCAP Inspection", level: "Advanced", isPrimary: true },
+        { name: "Security Sandboxing & URL Analysis", level: "Advanced" },
+        { name: "Linux Hardening & Syscalls", level: "Advanced" },
+        { name: "Cryptographic Hashing", level: "Advanced" }
       ]
     },
     {
-      category: "Web & Backend Engineering",
-      iconName: "Layers",
+      category: "Databases & Storage",
+      iconName: "Database",
       skills: [
-        { name: "React (18 / 19)", level: "Expert", isPrimary: true },
-        { name: "Next.js / Astro", level: "Advanced", isPrimary: true },
-        { name: "Node.js & Express", level: "Advanced", isPrimary: true },
-        { name: "Socket.io (WebSockets)", level: "Advanced" },
-        { name: "Tailwind CSS v4", level: "Expert", isPrimary: true },
-        { name: "RESTful API Architecture", level: "Expert" },
-        { name: "Radix UI / Headless UI", level: "Advanced" }
+        { name: "MySQL", level: "Expert", isPrimary: true },
+        { name: "PostgreSQL", level: "Proficient", isPrimary: true },
+        { name: "MongoDB", level: "Advanced", isPrimary: true },
+        { name: "SQLite", level: "Expert" },
+        { name: "Schema Normalization & ACID", level: "Expert" }
       ]
     },
     {
-      category: "Databases, DevOps & Cloud",
+      category: "DevOps, Cloud & Design Tools",
       iconName: "ServerCrash",
       skills: [
-        { name: "MySQL / MariaDB", level: "Advanced", isPrimary: true },
-        { name: "PostgreSQL", level: "Proficient" },
-        { name: "MongoDB", level: "Proficient" },
-        { name: "Docker & Containerization", level: "Advanced", isPrimary: true },
-        { name: "Git & GitHub Actions CI/CD", level: "Advanced", isPrimary: true },
-        { name: "Nginx & Reverse Proxies", level: "Advanced" },
-        { name: "Linux (Ubuntu, Debian, Alpine)", level: "Advanced" },
-        { name: "Cloudflare Pages & Vercel Edge", level: "Advanced" }
-      ]
-    },
-    {
-      category: "Desktop & UI Design",
-      iconName: "AppWindow",
-      skills: [
-        { name: "PyQt5 / Qt Desktop", level: "Advanced", isPrimary: true },
-        { name: "Figma (UI/UX Systems)", level: "Advanced", isPrimary: true },
-        { name: "PyMuPDF & Document Parsing", level: "Advanced" },
-        { name: "Pillow Image Processing", level: "Advanced" }
+        { name: "Docker & Containers", level: "Advanced", isPrimary: true },
+        { name: "Git & GitHub Actions CI/CD", level: "Expert", isPrimary: true },
+        { name: "Linux (Ubuntu / Debian)", level: "Advanced" },
+        { name: "Nginx & Apache", level: "Advanced" },
+        { name: "Postman API Testing", level: "Expert" },
+        { name: "AWS & Firebase", level: "Proficient" },
+        { name: "Figma & UI Prototyping", level: "Advanced" }
       ]
     }
   ],
@@ -433,7 +572,8 @@ export const cvData: ProfileData = {
         "Supervised executive organizing teams across multiple large-scale student conferences with 500+ attendees",
         "Spearheaded digital registration pipelines and automated tracking workflows for club events"
       ],
-      badge: "Executive Board"
+      badge: "Executive Board",
+      repoUrl: "https://github.com/Minhajh2o/UIU-English-Language-Forum-UIUELF-"
     },
     {
       role: "Head of IT & Digital Systems",
@@ -443,8 +583,7 @@ export const cvData: ProfileData = {
       location: "United International University",
       achievements: [
         "Directed all digital IT infrastructure, event ticketing systems, and multimedia stage tech for major drama productions",
-        "Coordinated sound, lighting automation, and live projection systems across multiple stage productions and film festivals",
-        "Designed promotional media and led technical logistics for campus entertainment events"
+        "Coordinated sound, lighting automation, and live projection systems across multiple stage productions and film festivals"
       ],
       badge: "IT Leadership"
     },
@@ -456,22 +595,22 @@ export const cvData: ProfileData = {
       location: "United International University",
       achievements: [
         "Assisted in hardware-software integration workshops, sensor telemetry calibration, and micro-controller programming sessions",
-        "Participated in national robotics competitions and mentored junior members in Python/C++ micro-controller scripting",
-        "Organized inter-departmental technical exhibitions and robotic design hackathons"
+        "Participated in national robotics competitions and mentored junior members in Python/C++ micro-controller scripting"
       ],
       badge: "Technical Executive"
     },
     {
-      role: "Peer Mentorship & Code Contributor",
-      organization: "Scaler Academy Community",
-      period: "2023 — Present",
-      type: "Mentorship",
-      location: "Remote / Global",
+      role: "Enterprise Collaborative Development",
+      organization: "BiniOrbit-SE Team",
+      period: "2024",
+      type: "Community",
+      location: "Academic Enterprise Collaboration",
       achievements: [
-        "Mentored undergraduate peers in Data Structures & Algorithms, Clean Code principles, and Python optimization",
-        "Conducted code review sessions and problem-solving workshops covering graph theory, dynamic programming, and systems design"
+        "Collaborated on enterprise software engineering practices, testing matrices, and architecture reviews",
+        "Participated in team pull-request reviews, sprint planning, and system modularization"
       ],
-      badge: "Community Mentor"
+      badge: "Software Engineering",
+      repoUrl: "https://github.com/Ishrak-1520/BiniOrbit-SE"
     }
   ]
 };

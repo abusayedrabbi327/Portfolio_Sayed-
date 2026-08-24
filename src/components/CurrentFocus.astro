@@ -1,0 +1,61 @@
+---
+import { cvData } from '../data/cvData';
+---
+
+<section id="current-focus" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <!-- Section Header -->
+  <div class="flex flex-col items-center text-center mb-16">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+      INNOVATION HORIZON
+    </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-tight">
+      Current Research & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Mission Focus</span>
+    </h2>
+    <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
+      High-impact technological frontiers actively under development — from geopolitical AI truth detection to next-gen medical platforms and environmental intelligence.
+    </p>
+  </div>
+
+  <!-- Focus Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {cvData.currentFocus.map((item, index) => (
+      <div class="glass-panel rounded-2xl p-6 sm:p-7 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group hover:-translate-y-1.5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/15 transition-all"></div>
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-cyan-300 border border-slate-800 text-xs font-mono font-semibold">
+              {item.tag}
+            </span>
+            <span class="text-[11px] font-mono text-slate-500">0{index + 1}</span>
+          </div>
+
+          <h3 class="text-lg sm:text-xl font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+            {item.title}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-slate-300 mt-2.5 leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+
+        <div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
+          <span>Active Frontier</span>
+          <span class="text-cyan-400 flex items-center gap-1">
+            <span>In Progress</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Quote Banner -->
+  <div class="mt-12 glass-panel rounded-3xl p-8 border border-slate-800/80 text-center max-w-4xl mx-auto relative overflow-hidden">
+    <div class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">Guiding Engineering Philosophy</div>
+    <blockquote class="text-base sm:text-xl font-semibold text-slate-200 italic leading-relaxed">
+      "{cvData.quote}"
+    </blockquote>
+    <div class="text-xs font-mono text-slate-400 mt-3">— Abu Sayed Rabbi</div>
+  </div>
+</section>
