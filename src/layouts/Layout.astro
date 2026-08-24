@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Abu Sayed Rabbi | Intelligent Systems, AI & Cybersecurity Engineer",
+  description = "Undergraduate CSE Researcher @ UIU specializing in Real-Time Explainable AI (XAI), Intrusion Detection Systems (AEGIS), High-Performance Desktop Systems, and Full-Stack Engineering.",
+  ogImage = "/og-image.png"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://abusayedrabbi.dev');
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Abu Sayed Rabbi" />
+    <meta name="keywords" content="Abu Sayed Rabbi, Cybersecurity, Explainable AI, XAI, AEGIS, Intrusion Detection, RT-XNIDS, SIFT, Fender, PocketGuru, UIU, United International University, Machine Learning, Python, PyQt5, React, TypeScript" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Inline Script to prevent Theme Flash -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body class="bg-[#090d16] text-[#f8fafc] antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div class="relative min-h-screen bg-grid-pattern overflow-hidden">
+      <!-- Background Ambient Glow Accents -->
+      <div class="radial-glow-top"></div>
+      <div class="radial-glow-middle"></div>
+
+      <!-- Main Slot -->
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "name": "Abu Sayed Rabbi",
+  "title": "Undergraduate Computer Science & Engineering Researcher & Software Engineer",
+  "roleSubtitle": "Building Intelligent Systems at the Intersection of AI, Cybersecurity & Software Engineering",
+  "location": "Dhaka, Bangladesh",
+  "email": "abusayedrabbi327@gmail.com",
+  "github": "https://github.com/abusayedrabbi327",
+  "linkedin": "https://linkedin.com/in/abusayedrabbi",
+  "bioSummary": "Final-year Computer Science and Engineering undergraduate at United International University (UIU). Specializing in AI-driven cybersecurity, Explainable AI (XAI) for real-time intrusion detection, high-performance desktop systems, and modern scalable full-stack web applications. Passionate about turning complex academic research into deployable, human-interpretable engineering solutions.",
+  "badges": [
+    "🎓 UIU CSE Senior",
+    "🔒 Cyber Defense & IDS",
+    "🤖 Explainable AI (XAI)",
+    "⚡ Full-Stack & Systems"
+  ],
+  "availability": {
+    "status": "available",
+    "text": "Open for Research Collaborations & Software Engineering Roles"
+  },
+  "stats": [
+    { "label": "Research Innovations", "value": "4", "suffix": "+" },
+    { "label": "Production Projects", "value": "10", "suffix": "+" },
+    { "label": "Intrusion Detection Acc.", "value": "99.4", "suffix": "%" },
+    { "label": "Leadership Tenures", "value": "4", "suffix": " Orgs" }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science & Engineering",
+      "field": "Intelligent Systems, Cybersecurity & Software Engineering",
+      "institution": "United International University (UIU)",
+      "location": "Dhaka, Bangladesh",
+      "period": "2021 — 2025 (Expected)",
+      "gpaBadge": "Final Year / Capstone Research"
+    }
+  ],
+  "research": [
+    {
+      "id": "aegis-fyp",
+      "title": "AEGIS: Autonomous Explainable Host & Network Intrusion Detection Framework",
+      "shortTitle": "AEGIS (Capstone Research)",
+      "category": "Cybersecurity",
+      "status": "In Preparation",
+      "venue": "IEEE / Springer Cyber Defense Track (Targeted)",
+      "year": "2025",
+      "metrics": [
+        { "label": "Detection Accuracy", "value": "99.4%" },
+        { "label": "Inference Latency", "value": "< 1.2 ms" },
+        { "label": "False Positive Reduction", "value": "37.8%" }
+      ],
+      "tags": ["Explainable AI", "Network Security", "Host Intrusion Detection", "eBPF", "SHAP", "PyTorch"]
+    },
+    {
+      "id": "rt-xnids",
+      "title": "RT-XNIDS: Real-Time Explainable Network Intrusion Detection with High-Throughput Flows",
+      "shortTitle": "RT-XNIDS",
+      "category": "Network Defense",
+      "status": "In Preparation",
+      "year": "2024 — 2025",
+      "tags": ["Cybersecurity", "Network IDS", "Machine Learning", "Scikit-Learn", "Snort"]
+    },
+    {
+      "id": "sift-engine",
+      "title": "SIFT: Scalable Interpretable Feature Transformation for High-Dimensional Telemetry",
+      "shortTitle": "SIFT Pipeline",
+      "category": "Explainable AI",
+      "status": "Preprint",
+      "year": "2024",
+      "tags": ["XAI", "Feature Engineering", "Interpretability", "Python"]
+    },
+    {
+      "id": "ecocode-llm",
+      "title": "EcoCode-LLM: Carbon-Aware Code Optimization and Efficient Inference",
+      "shortTitle": "EcoCode-LLM",
+      "category": "LLM Optimization",
+      "status": "In Preparation",
+      "year": "2025",
+      "tags": ["LLMs", "Green Computing", "Algorithmic Efficiency"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "pocketguru",
+      "title": "PocketGuru",
+      "subtitle": "AI-Powered Student Financial & Academic Companion",
+      "category": "Full-Stack",
+      "techStack": ["React 18", "TypeScript", "Tailwind CSS", "Radix UI", "Figma", "Vite"],
+      "role": "Lead Frontend Architect & UI/UX Designer",
+      "year": "2024",
+      "githubUrl": "https://github.com/abusayedrabbi327/pocketguru"
+    },
+    {
+      "id": "fender-v35",
+      "title": "Fender v3.5 Professional",
+      "subtitle": "High-Performance Multi-Threaded Duplicate File Hunter & Storage Organizer",
+      "category": "Desktop",
+      "techStack": ["Python 3", "PyQt5", "xxhash", "PyMuPDF", "python-docx", "Pillow", "send2trash"],
+      "role": "Sole Creator & Lead Systems Developer",
+      "year": "2024 — 2025",
+      "githubUrl": "https://github.com/abusayedrabbi327/fender-file-manager"
+    },
+    {
+      "id": "thikana",
+      "title": "Thikana Marketplace",
+      "subtitle": "Full-Stack Real-Time Housing & Student Marketplace",
+      "category": "Full-Stack",
+      "techStack": ["React 19", "Node.js", "Express", "Socket.io", "MySQL", "JWT", "Tailwind CSS"],
+      "role": "Full-Stack Engineer & Database Architect",
+      "year": "2024",
+      "githubUrl": "https://github.com/abusayedrabbi327/thikana"
+    },
+    {
+      "id": "neighborhood-sustainability-network",
+      "title": "Neighborhood Sustainability Network (NSN)",
+      "subtitle": "Community Carbon-Footprint & Resource Sharing Web Portal",
+      "category": "Full-Stack",
+      "techStack": ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Bootstrap/Tailwind"],
+      "role": "Backend & Database Developer",
+      "year": "2023 — 2024",
+      "githubUrl": "https://github.com/abusayedrabbi327/nsn-sustainability-portal"
+    }
+  ]
+}
