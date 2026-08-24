@@ -5,80 +5,78 @@ const featuredResearch = cvData.research.find(r => r.id === 'aegis-fyp') || cvDa
 const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
 ---
 
-<section id="research" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<section id="research" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
   <!-- Section Header -->
   <div class="flex flex-col items-center text-center mb-16">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
       <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
       ACADEMIC & APPLIED RESEARCH
     </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-tight">
-      Intelligent Systems & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Explainable AI</span>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+      Explainable AI & <span class="text-cyber-cyan">Real-Time Threat Telemetry</span>
     </h2>
     <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
-      Rigorous academic research in multi-layered cyber defense, scalable interpretable feature transformations (SIFT), and sub-millisecond threat attribution.
+      Publishable research solving black-box neural opacity, high false-alarm rates, and high-throughput streaming intrusion telemetry.
     </p>
   </div>
 
   <!-- Flagship Capstone Research: AEGIS -->
-  <div class="glass-panel rounded-3xl p-6 sm:p-8 lg:p-10 border border-cyan-500/30 shadow-2xl shadow-cyan-950/40 relative overflow-hidden mb-12">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <!-- Badge & Status Row -->
+  <div class="cyber-card rounded-3xl p-6 sm:p-9 lg:p-12 border border-cyan-500/30 glow-border relative overflow-hidden mb-12">
+    <!-- Top Meta Row -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-      <div class="flex items-center gap-3">
-        <span class="px-3.5 py-1 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
+      <div class="flex items-center gap-2.5">
+        <span class="px-3.5 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
           {featuredResearch.category}
         </span>
-        <span class="px-3 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-xs font-semibold">
+        <span class="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold">
           Status: {featuredResearch.status}
         </span>
       </div>
       <div class="text-xs font-mono text-slate-400">
-        Capstone Final Year Project • {featuredResearch.year}
+        Capstone Senior Thesis • {featuredResearch.year}
       </div>
     </div>
 
     <!-- Title & Abstract -->
-    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-100 leading-snug">
+    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-snug">
       {featuredResearch.title}
     </h3>
-    <p class="mt-2 text-cyan-400/90 font-mono text-sm sm:text-base">
+    <p class="mt-2 text-cyan-400 font-mono text-sm sm:text-base">
       {featuredResearch.tagline}
     </p>
 
-    <div class="mt-6 text-slate-300 text-sm sm:text-base leading-relaxed bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80">
+    <div class="mt-6 text-slate-300 text-xs sm:text-sm leading-relaxed bg-slate-950/80 p-5 rounded-2xl border border-slate-800">
       <p class="font-normal text-slate-300">{featuredResearch.abstract}</p>
     </div>
 
     <!-- Visual Architecture Flow Diagram -->
     {featuredResearch.architectureDiagram && (
       <div class="mt-8">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">
-            SYSTEM ARCHITECTURE & INFERENCE PIPELINE
+        <div class="flex items-center justify-between mb-3 text-xs font-mono">
+          <span class="text-slate-400 uppercase tracking-wider">
+            SYSTEM INFERENCE PIPELINE
           </span>
-          <span class="text-xs font-mono text-cyan-400">Real-Time Sub-millisecond Execution</span>
+          <span class="text-cyan-400">&lt; 1.2ms End-to-End Latency</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
           {featuredResearch.architectureDiagram.nodes.map((node, index) => (
-            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between relative group">
+            <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800/90 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
               <div>
-                <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1.5">
-                  <span>STEP 0{index + 1}</span>
-                  <span class={`px-1.5 py-0.5 rounded text-[10px] uppercase font-bold ${
+                <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1.5">
+                  <span>STAGE 0{index + 1}</span>
+                  <span class={`px-1.5 py-0.5 rounded uppercase font-bold text-[9px] ${
                     node.type === 'ai' ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' :
                     node.type === 'process' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' :
                     node.type === 'output' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' :
-                    'bg-slate-700/40 text-slate-300'
+                    'bg-slate-800 text-slate-300'
                   }`}>
                     {node.type}
                   </span>
                 </div>
-                <h4 class="font-bold text-sm text-slate-200 group-hover:text-cyan-300 transition-colors">
+                <h4 class="font-bold text-xs sm:text-sm text-white group-hover:text-cyan-300 transition-colors">
                   {node.label}
                 </h4>
-                <p class="text-xs text-slate-400 mt-1 leading-normal">
+                <p class="text-[11px] text-slate-400 mt-1 leading-normal">
                   {node.desc}
                 </p>
               </div>
@@ -88,31 +86,29 @@ const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
       </div>
     )}
 
-    <!-- Key Contributions & Metrics -->
+    <!-- Contributions & Empirical Benchmark Cards -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
-      <!-- Contributions List -->
       <div class="lg:col-span-2 space-y-2.5">
-        <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Key Innovations & Engineering Contributions</h4>
+        <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Key Engineering Innovations</h4>
         <ul class="space-y-2">
           {featuredResearch.contributions.map((contrib) => (
             <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-              <span class="text-cyan-400 mt-0.5 flex-shrink-0">▹</span>
+              <span class="text-cyan-400 mt-0.5 font-bold">▹</span>
               <span>{contrib}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <!-- Benchmark Metrics -->
-      <div class="flex flex-col gap-3 justify-center bg-slate-900/80 p-5 rounded-2xl border border-slate-800">
+      <div class="flex flex-col gap-2.5 justify-center bg-slate-950/90 p-5 rounded-2xl border border-slate-800">
         <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Empirical Benchmark Results</h4>
         {featuredResearch.metrics?.map((metric) => (
-          <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/60">
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
             <div>
               <div class="text-xs text-slate-400">{metric.label}</div>
-              {metric.detail && <div class="text-[10px] text-slate-400">{metric.detail}</div>}
+              {metric.detail && <div class="text-[10px] text-slate-400 font-mono">{metric.detail}</div>}
             </div>
-            <div class="font-mono font-bold text-base sm:text-lg text-cyan-400">
+            <div class="font-mono font-black text-base sm:text-lg text-cyan-400">
               {metric.value}
             </div>
           </div>
@@ -122,9 +118,9 @@ const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
 
     <!-- Tags & Code Repo Link -->
     <div class="flex flex-wrap items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-800">
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-1.5">
         {featuredResearch.tags.map((tag) => (
-          <span class="px-2.5 py-1 rounded-lg bg-slate-800/60 text-slate-300 text-xs font-mono border border-slate-700/50">
+          <span class="px-2.5 py-1 rounded bg-slate-950 text-slate-300 text-xs font-mono border border-slate-800">
             #{tag}
           </span>
         ))}
@@ -134,24 +130,21 @@ const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
           href={featuredResearch.codeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-          </svg>
-          <span>View Source Repository</span>
+          <span>Open AEGIS Repository ↗</span>
         </a>
       )}
     </div>
   </div>
 
-  <!-- Additional Research Initiatives Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Other Research Initiatives Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {otherResearch.map((item) => (
-      <div class="glass-panel rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between group">
+      <div class="cyber-card rounded-2xl p-6 sm:p-7 border border-slate-800 hover:border-cyan-500/30 transition-all flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-slate-800 text-cyan-400 border border-slate-700">
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-slate-900 text-cyan-400 border border-slate-800">
               {item.category}
             </span>
             <span class="text-xs font-mono text-slate-400">
@@ -159,19 +152,19 @@ const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
             </span>
           </div>
 
-          <h3 class="text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
-            {item.shortTitle}
+          <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+            {item.title}
           </h3>
-          <p class="text-xs font-mono text-slate-400 mt-1">
+          <p class="text-xs font-mono text-cyan-400 mt-1">
             {item.tagline}
           </p>
 
-          <p class="text-xs text-slate-300 mt-3 leading-relaxed">
+          <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
             {item.abstract}
           </p>
 
           {item.metrics && (
-            <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5">
+            <div class="mt-4 pt-3 border-t border-slate-800 space-y-1.5">
               {item.metrics.map((m) => (
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-400">{m.label}</span>
@@ -182,12 +175,25 @@ const otherResearch = cvData.research.filter(r => r.id !== 'aegis-fyp');
           )}
         </div>
 
-        <div class="flex flex-wrap gap-1.5 mt-6 pt-4 border-t border-slate-800/60">
-          {item.tags.slice(0, 3).map((tag) => (
-            <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-[11px] font-mono">
-              #{tag}
-            </span>
-          ))}
+        <div class="flex items-center justify-between gap-2 mt-6 pt-4 border-t border-slate-800/80">
+          <div class="flex flex-wrap gap-1">
+            {item.tags.slice(0, 3).map((tag) => (
+              <span class="px-2 py-0.5 rounded bg-slate-950 text-slate-400 text-[10px] font-mono">
+                #{tag}
+              </span>
+            ))}
+          </div>
+
+          {item.codeUrl && (
+            <a
+              href={item.codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              View Code ↗
+            </a>
+          )}
         </div>
       </div>
     ))}

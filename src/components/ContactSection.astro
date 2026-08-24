@@ -2,31 +2,31 @@
 import { cvData } from '../data/cvData';
 ---
 
-<section id="contact" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<section id="contact" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
   <!-- Section Header -->
   <div class="flex flex-col items-center text-center mb-16">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-4">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
       COMMUNICATION HUB
     </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-100 tracking-tight">
-      Let's Connect & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Collaborate</span>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+      Let's Connect & <span class="text-cyber-cyan">Collaborate</span>
     </h2>
     <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
-      Whether you have a research inquiry, open software engineering role, speaking invitation, or want to discuss AI-driven cyber defense, my inbox is always open.
+      Whether you have a research inquiry, open software engineering role, startup initiative, or want to discuss AI-driven cybersecurity, my inbox is open.
     </p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
     <!-- Email Contact Card -->
-    <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+    <div class="cyber-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
       <div>
         <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 transition-transform">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
-        <h3 class="text-lg font-bold text-slate-100">Direct Email</h3>
+        <h3 class="text-lg font-bold text-white">Direct Email</h3>
         <p class="text-xs text-slate-400 mt-1">Primary channel for fast inquiries</p>
         <p class="text-sm font-mono text-cyan-300 mt-3 break-all">{cvData.email}</p>
       </div>
@@ -34,15 +34,15 @@ import { cvData } from '../data/cvData';
       <div class="mt-6 flex items-center gap-2">
         <a
           href={`mailto:${cvData.email}`}
-          class="flex-1 text-center py-2.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-all"
+          class="flex-1 text-center py-2.5 rounded-xl text-xs font-mono font-bold bg-cyan-400 text-slate-950 hover:bg-cyan-300 transition-all"
         >
-          Send Email
+          Send Message
         </a>
         <button
           id="copy-email-btn"
           data-email={cvData.email}
           aria-label="Copy email address"
-          class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
+          class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors cursor-pointer border border-slate-800"
         >
           <svg id="copy-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -52,48 +52,48 @@ import { cvData } from '../data/cvData';
     </div>
 
     <!-- LinkedIn Card -->
-    <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+    <div class="cyber-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
       <div>
         <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-5 group-hover:scale-110 transition-transform">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z" />
           </svg>
         </div>
-        <h3 class="text-lg font-bold text-slate-100">Professional Network</h3>
-        <p class="text-xs text-slate-400 mt-1">LinkedIn connection & updates</p>
-        <p class="text-sm font-mono text-cyan-300 mt-3">linkedin.com/in/abusayedrabbi</p>
+        <h3 class="text-lg font-bold text-white">LinkedIn Network</h3>
+        <p class="text-xs text-slate-400 mt-1">Professional updates & networking</p>
+        <p class="text-sm font-mono text-cyan-300 mt-3 truncate">abu-sayed-rabbi-915541226</p>
       </div>
 
       <a
         href={cvData.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-6 text-center py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition-all"
+        class="mt-6 text-center py-2.5 rounded-xl text-xs font-mono font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 transition-all"
       >
         Connect on LinkedIn ↗
       </a>
     </div>
 
     <!-- GitHub Card -->
-    <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+    <div class="cyber-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
       <div>
         <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5 group-hover:scale-110 transition-transform">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
         </div>
-        <h3 class="text-lg font-bold text-slate-100">Code Repositories</h3>
-        <p class="text-xs text-slate-400 mt-1">Open source code & research</p>
-        <p class="text-sm font-mono text-cyan-300 mt-3">github.com/abusayedrabbi327</p>
+        <h3 class="text-lg font-bold text-white">GitHub Repositories</h3>
+        <p class="text-xs text-slate-400 mt-1">20+ open source projects & research</p>
+        <p class="text-sm font-mono text-cyan-300 mt-3">abusayedrabbi327</p>
       </div>
 
       <a
         href={cvData.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-6 text-center py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition-all"
+        class="mt-6 text-center py-2.5 rounded-xl text-xs font-mono font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 transition-all"
       >
-        Explore GitHub ↗
+        Explore Repos ↗
       </a>
     </div>
   </div>
@@ -105,9 +105,9 @@ import { cvData } from '../data/cvData';
     const email = copyBtn.getAttribute('data-email');
     if (email) {
       await navigator.clipboard.writeText(email);
-      copyBtn.classList.add('bg-emerald-500', 'text-black');
+      copyBtn.classList.add('bg-emerald-400', 'text-slate-950');
       setTimeout(() => {
-        copyBtn.classList.remove('bg-emerald-500', 'text-black');
+        copyBtn.classList.remove('bg-emerald-400', 'text-slate-950');
       }, 2000);
     }
   });
