@@ -2,7 +2,7 @@
 import { cvData } from '../data/cvData';
 ---
 
-<section id="about" class="relative pt-32 pb-20 md:pt-44 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+<section id="about" class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
     
     <!-- Left Hero Column (7 Cols) -->
@@ -16,13 +16,14 @@ import { cvData } from '../data/cvData';
         <span class="tracking-wide">{cvData.availability.text}</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.08]">
-        Engineering <span class="text-cyber-cyan">Intelligent Systems</span> & Cyber Defense.
+      <!-- Main Headline with Dynamic Typewriter Effect -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
+        Engineering <span class="text-cyber-cyan" id="hero-typing-text">Intelligent Systems</span><span class="inline-block w-1 h-8 sm:h-12 bg-cyan-400 ml-1.5 animate-pulse align-middle"></span>
+        <span class="block mt-1 text-slate-200">& Cyber Threat Defense.</span>
       </h1>
 
       <!-- Identity & University -->
-      <div class="mt-4 flex items-center gap-3 text-sm sm:text-base font-mono text-slate-300">
+      <div class="mt-4 flex flex-wrap items-center gap-2 sm:gap-3 text-sm sm:text-base font-mono text-slate-300">
         <span class="text-white font-bold text-lg">{cvData.name}</span>
         <span class="text-slate-600">•</span>
         <span class="text-cyan-400">CSE @ United International University</span>
@@ -36,23 +37,23 @@ import { cvData } from '../data/cvData';
       <!-- Action Buttons -->
       <div class="flex flex-wrap items-center gap-3.5 mt-8 w-full sm:w-auto">
         <a
-          href="#current-focus"
+          href="#projects"
           class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all cursor-pointer w-full sm:w-auto"
         >
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
-          <span>Explore Innovation Radar</span>
+          <span>Explore Works (20+)</span>
         </a>
 
         <a
-          href="#projects"
+          href="#current-focus"
           class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-cyan-500/50 hover:text-white hover:-translate-y-0.5 transition-all cursor-pointer w-full sm:w-auto"
         >
           <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
-          <span>All Projects (20+)</span>
+          <span>Innovation Radar</span>
         </a>
 
         <a
@@ -178,3 +179,51 @@ import { cvData } from '../data/cvData';
 
   </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const roles = [
+      'Intelligent Systems',
+      'Cyber Threat Telemetry',
+      'Explainable AI (XAI)',
+      'AEGIS Intrusion Defense',
+      'Full-Stack Architecture',
+      'Neural Flow Analytics',
+    ];
+
+    const typingEl = document.getElementById('hero-typing-text');
+    if (!typingEl) return;
+
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let typingSpeed = 90;
+
+    function type() {
+      const currentRole = roles[roleIdx];
+
+      if (isDeleting) {
+        typingEl.textContent = currentRole.substring(0, charIdx - 1);
+        charIdx--;
+        typingSpeed = 45;
+      } else {
+        typingEl.textContent = currentRole.substring(0, charIdx + 1);
+        charIdx++;
+        typingSpeed = 90;
+      }
+
+      if (!isDeleting && charIdx === currentRole.length) {
+        isDeleting = true;
+        typingSpeed = 2200; // Pause at full word
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        typingSpeed = 400; // Pause before typing next word
+      }
+
+      setTimeout(type, typingSpeed);
+    }
+
+    type();
+  })();
+</script>

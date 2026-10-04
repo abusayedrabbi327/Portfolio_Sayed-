@@ -1,0 +1,79 @@
+---
+// Creative Systems & Design Portfolio Showcase
+const designCards = [
+  {
+    title: 'UI/UX & Product Architecture',
+    tag: 'Figma & Design Systems',
+    desc: 'Crafting responsive glassmorphic dark-mode dashboards, interactive state machines, and cybernetic telemetry telemetry cockpits with precision typography and micro-interactions.',
+    icon: '📐',
+    badge: 'Design System',
+  },
+  {
+    title: 'Visual Identity & Branding',
+    tag: 'Brand Systems',
+    desc: 'Developing comprehensive logos, vector iconography, and color palettes for technology products, clubs, and student organizations across university platforms.',
+    icon: '🎨',
+    badge: 'Identity',
+  },
+  {
+    title: 'System Architecture Diagrams',
+    tag: 'Technical Flowcharts',
+    desc: 'Translating complex distributed ML pipelines (AEGIS, RT-XNIDS, E-CMH) into intuitive visual flowcharts, sequence diagrams, and empirical benchmark visualizations.',
+    icon: '📊',
+    badge: 'Engineering XAI',
+  },
+  {
+    title: 'Interactive Media & Graphics',
+    tag: 'Posters & Media',
+    desc: 'Designing promotional materials, event banners, and technical workshop slides for university student forums (UIU ELF, Theater & Film, Robotics Club).',
+    icon: '🎬',
+    badge: 'Creative Media',
+  },
+];
+---
+
+<section id="design" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <div class="flex flex-col items-center text-center mb-16">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-950/50 border border-purple-500/30 text-purple-400 text-xs font-mono mb-4">
+      <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+      CREATIVE & SYSTEM DESIGN
+    </div>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+      UI/UX & Visual <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">Engineering</span>
+    </h2>
+    <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl">
+      Bridging the gap between hardcore engineering logic and striking, human-centric aesthetic design.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {designCards.map((card) => (
+      <div class="cyber-card rounded-2xl p-6 border border-slate-800/90 hover:border-purple-500/40 transition-all flex flex-col justify-between group hover:-translate-y-1.5">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-3xl p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 group-hover:scale-110 transition-transform inline-block">
+              {card.icon}
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-950/60 text-purple-300 border border-purple-500/30">
+              {card.badge}
+            </span>
+          </div>
+
+          <h3 class="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+            {card.title}
+          </h3>
+          <p class="text-xs font-mono text-cyan-400 mt-1">{card.tag}</p>
+
+          <p class="text-xs sm:text-sm text-slate-400 mt-3 leading-relaxed">
+            {card.desc}
+          </p>
+        </div>
+
+        <div class="mt-6 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono text-slate-500">
+          <span>Aesthetic Fidelity</span>
+          <span class="text-purple-400 font-semibold">100% Custom</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

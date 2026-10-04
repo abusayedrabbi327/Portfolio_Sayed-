@@ -1,0 +1,111 @@
+---
+// Dual-row continuous infinite scrolling tech ribbon
+const row1 = [
+  { name: 'Python', icon: '🐍', tag: 'AI & Backend' },
+  { name: 'TypeScript', icon: '⚡', tag: 'Full-Stack' },
+  { name: 'PyTorch', icon: '🔥', tag: 'Deep Learning' },
+  { name: 'C / C++', icon: '⚙️', tag: 'Systems' },
+  { name: 'React / Next.js', icon: '⚛️', tag: 'Frontend' },
+  { name: 'Astro', icon: '🚀', tag: 'SSG Framework' },
+  { name: 'FastAPI', icon: '⚡', tag: 'REST APIs' },
+  { name: 'Java / OOP', icon: '☕', tag: 'Core Software' },
+  { name: 'PostgreSQL', icon: '🐘', tag: 'Relational DB' },
+  { name: 'Docker', icon: '🐳', tag: 'Containers' },
+  { name: 'Tailwind CSS', icon: '🎨', tag: 'UI Architecture' },
+  { name: 'Node.js', icon: '🟢', tag: 'Runtime' },
+];
+
+const row2 = [
+  { name: 'Explainable AI (XAI)', icon: '🧠', tag: 'SHAP & LIME' },
+  { name: 'Scikit-Learn', icon: '📊', tag: 'Machine Learning' },
+  { name: 'Snort & Wireshark', icon: '🛡️', tag: 'Network Telemetry' },
+  { name: 'PyQt5 Desktop', icon: '🖥️', tag: 'GUI Systems' },
+  { name: 'Redis Cache', icon: '⚡', tag: 'High-Throughput' },
+  { name: 'Linux Kernel', icon: '🐧', tag: 'DevOps & CLI' },
+  { name: 'Git & GitHub CI', icon: '🐙', tag: 'Version Control' },
+  { name: 'Figma UI/UX', icon: '📐', tag: 'Design Systems' },
+  { name: 'OpenCV', icon: '👁️', tag: 'Computer Vision' },
+  { name: 'SQLite', icon: '💾', tag: 'Embedded DB' },
+  { name: 'Postman', icon: '🚀', tag: 'API Testing' },
+  { name: 'Vercel / Cloudflare', icon: '☁️', tag: 'Edge Deploy' },
+];
+---
+
+<section class="py-16 overflow-hidden border-y border-slate-800/80 bg-slate-950/40 backdrop-blur-md relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+      ECOSYSTEM PULSE
+    </div>
+    <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">
+      Continuous <span class="text-cyber-cyan">Engineering & Research Stack</span>
+    </h3>
+  </div>
+
+  <!-- Left Scrolling Marquee Track -->
+  <div class="relative w-full overflow-hidden marquee-container mb-4">
+    <div class="flex gap-4 marquee-track-left whitespace-nowrap">
+      {[...row1, ...row1, ...row1].map((item) => (
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 hover:border-cyan-500/50 hover:bg-slate-800/90 text-slate-200 transition-all cursor-default shadow-md shadow-black/40 group">
+          <span class="text-base group-hover:scale-110 transition-transform">{item.icon}</span>
+          <span class="font-bold text-sm text-white group-hover:text-cyan-300 transition-colors">{item.name}</span>
+          <span class="text-[10px] font-mono text-cyan-400/80 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/20">{item.tag}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Right Scrolling Marquee Track -->
+  <div class="relative w-full overflow-hidden marquee-container">
+    <div class="flex gap-4 marquee-track-right whitespace-nowrap">
+      {[...row2, ...row2, ...row2].map((item) => (
+        <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800/80 hover:border-purple-500/50 hover:bg-slate-800/90 text-slate-200 transition-all cursor-default shadow-md shadow-black/40 group">
+          <span class="text-base group-hover:scale-110 transition-transform">{item.icon}</span>
+          <span class="font-bold text-sm text-white group-hover:text-purple-300 transition-colors">{item.name}</span>
+          <span class="text-[10px] font-mono text-purple-400/80 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-500/20">{item.tag}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Vignette Fades -->
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#030712] to-transparent z-10"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#030712] to-transparent z-10"></div>
+</section>
+
+<style>
+  .marquee-container:hover .marquee-track-left,
+  .marquee-container:hover .marquee-track-right {
+    animation-play-state: paused;
+  }
+
+  .marquee-track-left {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 35s linear infinite;
+  }
+
+  .marquee-track-right {
+    display: flex;
+    width: max-content;
+    animation: scrollRight 38s linear infinite;
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-33.333%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>

@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import BackgroundCanvas from '../components/BackgroundCanvas.astro';
+import ScrollTop from '../components/ScrollTop.astro';
 
 interface Props {
   title?: string;
@@ -74,14 +76,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://abusayed
       window.localStorage.setItem('theme', theme);
     </script>
   </head>
-  <body class="bg-[#090d16] text-[#f8fafc] antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
-    <div class="relative min-h-screen bg-grid-pattern overflow-hidden">
-      <!-- Background Ambient Glow Accents -->
-      <div class="radial-glow-top"></div>
-      <div class="radial-glow-middle"></div>
+  <body class="bg-[#030712] text-[#f8fafc] antialiased selection:bg-cyan-500/30 selection:text-cyan-200 min-h-screen relative overflow-x-hidden">
+    <!-- Interactive Background Particles Canvas -->
+    <BackgroundCanvas />
 
+    <div class="relative z-10 min-h-screen">
       <!-- Main Slot -->
       <slot />
     </div>
+
+    <!-- Floating Scroll To Top -->
+    <ScrollTop />
+
+    <!-- Scroll Reveal Observer Script -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        if (!reveals.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px',
+          }
+        );
+
+        reveals.forEach((el) => observer.observe(el));
+      });
+    </script>
   </body>
 </html>
